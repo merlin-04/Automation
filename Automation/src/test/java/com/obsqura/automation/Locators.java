@@ -135,6 +135,40 @@ public class Locators extends Base {
 		WebElement inlineRadioButton = driver.findElement(By.xpath("//input[starts-with(@id,'inlineRadio22')]"));
 		driver.navigate().to("https://selenium.obsqurazone.com/bootstrap-alert.php");
 		WebElement autoclosableButton = driver.findElement(By.xpath("//button[starts-with(@id,'autoclosable-btn-i')]"));
+
+		// XPath using text()
+		driver.navigate().to("https://selenium.obsqurazone.com/simple-form-demo.php");
+		WebElement singleInputField = driver.findElement(By.xpath("//div[contains(text(),'Single Input Field')]"));
+		WebElement ajaxFormSubmit = driver.findElement(By.xpath("//a[text()='Ajax Form Submit']"));
+		WebElement showMeassageButtonText = driver.findElement(By.xpath("//button[text()='Show Message']"));
+		WebElement getTotalButton = driver.findElement(By.xpath("//button[text()='Get Total']"));
+		WebElement enterValueA = driver.findElement(By.xpath("//label[text()='Enter value A']"));
+
+	}
+
+	public void locateByXpathAxesMethods() {
+		// using parent
+		driver.navigate().to("https://selenium.obsqurazone.com/form-submit.php");
+		WebElement validationCustom = driver.findElement(By.xpath("//input[@id='validationCustom01']//parent::div"));
+		driver.navigate().to("https://selenium.obsqurazone.com/bootstrap-alert.php");
+		WebElement collapsibleNavbar = driver.findElement(By.xpath("//div[@id='collapsibleNavbar']//parent::nav"));
+		WebElement autoclosableButtonSuccess = driver
+				.findElement(By.xpath("//button[@id='autoclosable-btn-success']//parent::div"));
+		WebElement normalButtonSuccess = driver
+				.findElement(By.xpath("//button[@id='normal-btn-success']//parent::div"));
+		WebElement autoclosableWarningButton = driver
+				.findElement(By.xpath("//button[@id='autoclosable-btn-warning']//parent::div"));
+
+		// using child
+		driver.navigate().to("https://www.amazon.in/");
+		WebElement navShopContainer = driver.findElement(By.xpath("//div[@id='nav-xshop-container']//child::div"));
+		WebElement flyoutAnchor = driver
+				.findElement(By.xpath("//div[@id='nav-flyout-iss-anchor']//child::div[@id='nav-flyout-searchAjax']"));
+		WebElement globalLocationSlot = driver.findElement(By.xpath(
+				"//div[@id='nav-global-location-slot']//child::span[@id='nav-global-location-data-modal-action']"));
+		WebElement navCartContainer = driver
+				.findElement(By.xpath("//div[@id='nav-cart-count-container']//child::span[@id='nav-cart-count']"));
+		WebElement navSearch = driver.findElement(By.xpath("//div[@id='nav-search']//child::div[@id='nav-bar-left']"));
 	}
 
 	public static void main(String[] args) {
@@ -145,6 +179,7 @@ public class Locators extends Base {
 		locators.locateByLinkText();
 		locators.locateByUsingPartialLinkText();
 		locators.locateByXpath();
+		locators.locateByXpathAxesMethods();
 		locators.driverCloseOrQuit();
 
 	}
