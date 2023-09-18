@@ -169,11 +169,24 @@ public class Locators extends Base {
 		WebElement navCartContainer = driver
 				.findElement(By.xpath("//div[@id='nav-cart-count-container']//child::span[@id='nav-cart-count']"));
 		WebElement navSearch = driver.findElement(By.xpath("//div[@id='nav-search']//child::div[@id='nav-bar-left']"));
+		
+		//using following
+		driver.navigate().to("https://selenium.obsqurazone.com/simple-form-demo.php");
+		WebElement followingShowMessage = driver.findElement(By.xpath("//button[@id='button-one']//following::div[@id='message-one']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/check-box-demo.php");
+		WebElement singleCheckbox = driver.findElement(By.xpath("//form[@method='POST']//following::input[@class='form-check-input']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/ajax-form-submit.php");
+		WebElement  subjectTextField = driver.findElement(By.xpath("//form[@class='needs-validation']//following::input[@id='subject']"));
+		driver.navigate().to("https://selenium.obsqurazone.com/jquery-select.php");
+		WebElement copyright = driver.findElement(By.xpath("//div[@class='container page']//following::div[@class='copyright']"));
+		
+		//using preceeding
 	}
 
 	public static void main(String[] args) {
 		Locators locators = new Locators();
 		locators.intializeBrowser();
+		locators.locateByClass();
 		locators.locateByCssSelector();
 		locators.locateByName();
 		locators.locateByLinkText();
